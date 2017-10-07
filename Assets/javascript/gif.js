@@ -11,7 +11,11 @@ $(document).ready(function(){
       //create a new var that will hopefully create a new button element
       var button = $("<button>")
       //gave the button an ID and Value of w/e the user typed in
-      button.attr =({id: GifSearch,  value: GifSearch} )
+      button.attr("id", GifSearch);
+      //commented out the line below bc it didnt work but im unsure why
+      //$("button").attr("value", GifSearch);
+      //console.log(button.id);
+      button.text(GifSearch);
       //attached the button to the buttons HTML section
       $("#buttons").append(button);
 
@@ -20,21 +24,21 @@ $(document).ready(function(){
 
 //when button is pressed pull API and display it
 
-//idk how to select an ID that hasn't been named yet?
-//$("#????").on("click", function(){
-      //var GifSearch = //button ID
-      //var urlQuery = "https://api.giphy.com/v1/gifs/search?q=" +
-        //GifSearch + "&api_key=dc6zaTOxFJmzC&limit=10";
+//select button by ID
+$("#GifSearch").on("click", function(){
+      var urlQuery = "https://api.giphy.com/v1/gifs/search?q=" +
+        GifSearch + "&api_key=dc6zaTOxFJmzC&limit=10";
 
-      //  $.ajax({
-      //      url: queryURL,
-      //      method: "GET"
-        //  })
-      //    .done(function(response) {
-        //    var results = response.data;
-        //    console.log(results);
+       $.ajax({
+          url: urlQuery,
+         method: "GET"
+         })
+      .done(function(response) {
+        var results = response.data;
+        console.log(results);
 
-//}
-//})
+})
 
+
+})
 })
