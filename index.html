@@ -1,37 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Train Schedule</title>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <title>Document</title>
-</head>
-
-<body>
-<!-- Buttons -->
-<div class = "buttons" id="buttons" >
-
-</div>
-
-
-
-<!-- Input Form -->
-<form>
-  <span>Search a Gif:
-    <input id="searchgif" type="text" >
-    <input id="submitgif" value="Add Gif" type="submit">
-  </span>
-</form>
-
-<!-- Display Gifs  -->
-<div id="GIFS"></div>
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/javascript/gif.js"></script>
-
-
-</body>
+  </head>
+  <body>
+    <table style="width:100%">
+  <tr>
+    <th>Train Name</th>
+    <th>Destiny</th>
+    <th>Frequency</th>
+    <th>Next Arrival</th>
+    <th>Minutes Away</th>
+  </tr>
+</table>
+    <form>
+      name:<br>
+       <input type="text" name="name" id="name"><br>
+      destination:<br>
+     <input type="text" name="destination" id="destination"><br>
+     first train time:<br>
+      <input type="text" name="FirstTrainTime" id="firsttraintime"><br>
+     frequency:<br>
+    <input type="text" name="frequency" id="frequency"> <br>
+    <input type="submit" value="Submit" id="submit">
+    </form>
+    <script src="train.js"></script>
+  </body>
 </html>
